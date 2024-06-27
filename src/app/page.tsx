@@ -1,9 +1,15 @@
-import Image from "next/image";
-import Header from "./components/header";
-
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+      router.push("/dashboard");
+  }, [router]);
   return (
-    <Header />
+    <><div className="flex justify-center items-center h-screen">
+      <h1 style={{ fontSize: "4rem" }}>Welcome from POS Portal</h1>
+    </div></>
   );
 }
