@@ -11,7 +11,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
-    color: #0B101A;
+    color: var(--text-color);
     padding-left: 24px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .customGrid {
-    border: 1px solid #D7D8DA;
+    border: 1px solid var(--disabled-border-color);
     margin: 20px 24px 8px 24px
 }
 
@@ -31,7 +31,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 19.09px;
-    color: #0B101A;
+    color: var(--text-color);
     background-color: #EEF0F4;
     padding: 15px 0 15px 16px;
     border-bottom: 1px solid #FFFFFF;
@@ -42,9 +42,9 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16.71px;
-    color: #0B101A;
+    color: var(--text-color);
     padding: 15px 0 15px 16px;
-    border-bottom: 1px solid #D7D8DA;
+    border-bottom: 1px solid var(--disabled-border-color);
 }
 
 .customLastContentText {
@@ -53,7 +53,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 19.09px;
-    color: #0B101A;
+    color: var(--text-color);
     background-color: #EEF0F4;
     padding: 15px 0 15px 16px;
 }
@@ -62,8 +62,9 @@
     width: 76px;
     height: 37px;
     border-radius: 8px;
-    background-color: #EBEEF3;
+    background-color: var(--disabled-color);
     margin: 6px 0 6px 4px;
+    padding: 0;
 }
 
 .customContentButtonText {
@@ -79,7 +80,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: 19.5px;
-    color: #0B101A;
+    color: var(--text-color);
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -88,7 +89,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: 19.5px;
-    color: #0B101A;
+    color: var(--text-color);
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 32px;
@@ -98,9 +99,9 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    background-color: #2A3958;
     margin-top: 24px;
     margin-right: 8px;
+    padding: 0;
 }
 
 .customPrimaryButtonText {
@@ -116,8 +117,10 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    border: 1.5px solid #2A3958;
+    border: 1.5px solid var(--background-button-color);
     margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 0;
 }
 
 .customSecondaryButtonText {
@@ -126,5 +129,5 @@
     line-height: 19.2px;
     text-align: center;
     padding: 17px 16px;
-    color: #2A3958;
+    color: var(--text-color);
 }

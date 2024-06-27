@@ -10,7 +10,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
-    color: #0B101A;
+    color: var(--text-color);
     padding-top: 16px;
 }
 
@@ -18,9 +18,9 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    background-color: #2A3958;
     margin-top: 24px;
     margin-right: 8px;
+    padding: 0;
 }
 
 .customPrimaryButtonText {
@@ -36,8 +36,10 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    border: 1.5px solid #2A3958;
+    border: 1.5px solid var(--background-button-color);
     margin-top: 24px;
+    background-color: #FFFFFF;
+    padding: 0;
 }
 
 .customSecondaryButtonText {
@@ -46,5 +48,5 @@
     line-height: 19.2px;
     text-align: center;
     padding: 17px 16px;
-    color: #2A3958;
+    color: var(--text-color);
 }

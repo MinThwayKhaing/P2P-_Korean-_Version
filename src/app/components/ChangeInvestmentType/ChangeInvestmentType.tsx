@@ -21,7 +21,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
   };
   
   const dividerStyle = {
-    borderBottom: "1px solid #D7D8DA",
+    borderBottom: "1px solid var(--disabled-border-color)",
   };
 
   return (

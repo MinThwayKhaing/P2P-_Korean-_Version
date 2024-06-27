@@ -10,7 +10,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
-    color: #0B101A;
+    color: var(--text-color);
     padding-top: 16px;
 }
 
@@ -18,8 +18,9 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    background-color: #2A3958;
     margin-top: 24px;
+    margin-right: 8px;
+    padding: 0;
 }
 
 .customPrimaryButtonText {
