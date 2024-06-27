@@ -33,7 +33,6 @@ const Confirm: React.FC<ConfirmProps> = ({
               <Image
                 src={imageUrl}
                 alt="Warning Logo"
-                className="dark:invert"
                 width={30}
                 height={30}
                 priority
@@ -41,7 +40,7 @@ const Confirm: React.FC<ConfirmProps> = ({
               <Image
                 src="/close.svg"
                 alt="Close Logo"
-                className="dark:invert cursor-pointer"
+                className="cursor-pointer"
                 width={24}
                 height={24}
                 priority
@@ -49,7 +48,7 @@ const Confirm: React.FC<ConfirmProps> = ({
               />
             </div>
             <p className={styles.customContentText}>{modalContent}</p>
-            <div className="flex justify-between">
+            <div className="flex justify-center">
               <button className={styles.customPrimaryButton} onClick={handleCheckClick}>
                 <span className={styles.customPrimaryButtonText}>확인</span>
               </button>

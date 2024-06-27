@@ -33,7 +33,6 @@ const Alert: React.FC<AlertProps> = ({
               <Image
                 src={imageUrl}
                 alt="Warning Logo"
-                className="dark:invert"
                 width={30}
                 height={30}
                 priority
@@ -41,7 +40,7 @@ const Alert: React.FC<AlertProps> = ({
               <Image
                 src="/close.svg"
                 alt="Close Logo"
-                className="dark:invert cursor-pointer"
+                className="cursor-pointer"
                 width={24}
                 height={24}
                 priority
