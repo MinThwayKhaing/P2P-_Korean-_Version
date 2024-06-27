@@ -1,0 +1,32 @@
+{
+    "headers": [
+      {
+        "name": "header1",
+        "dropdownOptions": [
+          { "value": 1, "label": "승인여부 전체" },
+          { "value": 2, "label": "승인대기" },
+          { "value": 3, "label": "승인완료" },
+          { "value": 4, "label": "승인거부" }
+        ],
+        "defaultOption": 2 
+      },
+      {
+        "name": "header2",
+        "dropdownOptions": [
+          { "value": 1, "label": "신청일시순" },
+          { "value": 2, "label": "승인일시순" }
+        ],
+        "defaultOption": 1  
+      },
+      {
+        "name": "header3",
+        "dropdownOptions": [
+          { "value": 1, "label": "승인상태 변경" },
+          { "value": 2, "label": "승인완료" },
+          { "value": 3, "label": "승인거부" }
+        ],
+        "defaultOption": 1 
+      }
+    ]
+  }
+  

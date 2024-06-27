@@ -1,0 +1,19 @@
+{
+    "headers": [
+      {
+        "name": "header1",
+        "dropdownOptions": [
+          { "value": 1, "label": "가입일시순" }
+        ],
+        "defaultOption": 1 
+      },
+      {
+        "name": "header2",
+        "dropdownOptions": [
+          { "value": 1, "label": "50개씩 보기" }
+        ],
+        "defaultOption": 1  
+      }
+    ]
+  }
+  

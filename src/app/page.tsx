@@ -9,7 +9,7 @@ export default function Home() {
   }, [router]);
   return (
     <><div className="flex justify-center items-center h-screen">
-      <h1 style={{ fontSize: "4rem" }}>Welcome from POS Portal</h1>
+      <h1 style={{ fontSize: "4rem" }}>Welcome from P2P</h1>
     </div></>
   );
 }
