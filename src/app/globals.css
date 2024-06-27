@@ -1,9 +1,10 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --color-background: #ffffff;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -17,17 +18,81 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  background: var(--color-background);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+* {
+  font-family: Pretendard;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+}
+nav {
+  width: 130px;
+  height: 39px;
+  padding: 10px;
+  background: #ebeef3;
+}
+
+.first-nav {
+  border-radius: 8px 0 0 8px;
+}
+
+.last-nav {
+  border-radius: 0 8px 8px 0;
+}
+
+h1 {
+  font-family: Pretendard;
+  font-size: 24px;
+  line-height: 29.64px;
+  font-weight: 700;
+  color: #0b101a;
+}
+
+h3 {
+  padding: 6px 0px;
+  font-family: Pretendard;
+  font-size: 14px;
+  line-height: 16.8px;
+  font-weight: 500;
+  color: #ff4d4f;
+}
+h4 {
+  font-family: Pretendard;
+  font-size: 14px;
+  line-height: 16.8px;
+  font-weight: 500;
+  color: #ff4d4f;
+}
+.header {
+  height: 38.92px;
+}
+hr {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #d7d8da;
+}
+
+.nav-font-size {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.09px;
+  text-align: center;
+  color: #b1b4bb;
 }
