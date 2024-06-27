@@ -20,6 +20,11 @@
     cursor: pointer;
 }
 
+.customGrid {
+    border: 1px solid #D7D8DA;
+    margin: 20px 24px 8px 24px
+}
+
 .customLeftContentText {
     width: 160px;
     height: 50px;
@@ -29,6 +34,7 @@
     color: #0B101A;
     background-color: #EEF0F4;
     padding: 15px 0 15px 16px;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 .customRightContentText {
@@ -37,6 +43,18 @@
     font-weight: 400;
     line-height: 16.71px;
     color: #0B101A;
+    padding: 15px 0 15px 16px;
+    border-bottom: 1px solid #D7D8DA;
+}
+
+.customLastContentText {
+    width: 160px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.09px;
+    color: #0B101A;
+    background-color: #EEF0F4;
     padding: 15px 0 15px 16px;
 }
 
