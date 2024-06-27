@@ -1,0 +1,50 @@
+.customContainer {
+    padding: 24px;
+    width: 400px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    z-index: 50;
+}
+
+.customContentText {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #0B101A;
+    padding-top: 16px;
+}
+
+.customPrimaryButton {
+    width: 170px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #2A3958;
+    margin-top: 24px;
+    margin-right: 8px;
+}
+
+.customPrimaryButtonText {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: center;
+    padding: 17px 16px;
+    color: #ffffff;
+}
+
+.customSecondaryButton {
+    width: 170px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1.5px solid #2A3958;
+    margin-top: 24px;
+}
+
+.customSecondaryButtonText {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: center;
+    padding: 17px 16px;
+    color: #2A3958;
+}
