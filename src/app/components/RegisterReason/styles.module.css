@@ -25,7 +25,7 @@
     margin: 20px 24px 8px 24px
 }
 
-.customLeftContentText {
+.customLeftContentText1 {
     width: 160px;
     height: 50px;
     font-size: 16px;
@@ -37,7 +37,7 @@
     border-bottom: 1px solid #FFFFFF;
 }
 
-.customRightContentText {
+.customRightContentText1 {
     height: 50px;
     font-size: 14px;
     font-weight: 400;
@@ -47,52 +47,28 @@
     border-bottom: 1px solid var(--disabled-border-color);
 }
 
-.customLastContentText {
+.customLeftContentText2 {
     width: 160px;
-    height: 50px;
+    height: 300px;
     font-size: 16px;
     font-weight: 500;
     line-height: 19.09px;
     color: var(--text-color);
     background-color: #EEF0F4;
-    padding: 15px 16px 15px 16px;
+    padding: 15px 0 15px 16px;
+    border-bottom: 1px solid #FFFFFF;
+    display: flex;
+    align-items: center;
 }
 
-.customContentButton {
-    width: 76px;
-    height: 37px;
-    border-radius: 8px;
-    background-color: var(--disabled-color);
-    margin: 6px 0 6px 4px;
-    padding: 0;
-}
-
-.customContentButtonText {
+.customRightContentText2 {
+    height: 300px;
     font-size: 14px;
     font-weight: 400;
-    line-height: 16.8px;
-    text-align: center;
-    padding: 10px 12px;
-    color: #222222;
-}
-
-.customContentText1 {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19.5px;
+    line-height: 16.71px;
     color: var(--text-color);
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-.customContentText2 {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19.5px;
-    color: var(--text-color);
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 32px;
+    padding: 15px 16px 15px 16px;
+    border-bottom: 1px solid var(--disabled-border-color);
 }
 
 .customPrimaryButton {

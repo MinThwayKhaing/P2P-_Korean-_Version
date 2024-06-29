@@ -4,40 +4,20 @@ import styles from "./styles.module.css";
 interface ChangeInvestmentTypeProps {
   isOpen: boolean;
   onClose: () => void;
-  imageUrl: string;
-  modalContent: string;
 }
 
 const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
   isOpen,
   onClose,
-  imageUrl,
-  modalContent,
 }) => {
   const handleCloseClick = () => onClose();
 
   const handleCheckClick = () => {
     handleCloseClick();
   };
-
-  const gridContainerStyle = {
-    border: "1px solid #D7D8DA",
-    marginTop: "20px",
-    marginBottom: "8px",
-    marginLeft: "24px",
-    marginRight: "24px",
-  };
-
-  const gridContainerStyle1 = {
-    borderBottom: "1px solid #FFFFFF",
-  };
-
-  const gridContainerStyle2 = {
-    borderBottom: "1px solid #D7D8DA",
-  };
   
   const dividerStyle = {
-    borderBottom: "1px solid #D7D8DA",
+    borderBottom: "1px solid var(--disabled-border-color)",
   };
 
   return (
@@ -62,21 +42,21 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
               />
             </div>
             <div style={dividerStyle}></div>
-            <div style={gridContainerStyle}>
+            <div className={styles.customGrid}>
                 <div className="grid grid-cols-[160px_auto]">
-                    <p style={gridContainerStyle1} className={styles.customLeftContentText}>회원번호</p>
-                    <p style={gridContainerStyle2} className={styles.customRightContentText}>abc111</p>
+                    <p className={styles.customLeftContentText}>회원번호</p>
+                    <p className={styles.customRightContentText}>abc111</p>
                 </div>
                 <div className="grid grid-cols-[160px_auto]">
-                    <p style={gridContainerStyle1} className={styles.customLeftContentText}>회원명/법인명</p>
-                    <p style={gridContainerStyle2} className={styles.customRightContentText}>김길동</p>
+                    <p className={styles.customLeftContentText}>회원명/법인명</p>
+                    <p className={styles.customRightContentText}>김길동</p>
                 </div>
                 <div className="grid grid-cols-[160px_auto]">
-                    <p style={gridContainerStyle1} className={styles.customLeftContentText}>투자유형</p>
-                    <p style={gridContainerStyle2} className={styles.customRightContentText}></p>
+                    <p className={styles.customLeftContentText}>투자유형</p>
+                    <p className={styles.customRightContentText}></p>
                 </div>
                 <div className="grid grid-cols-[160px_auto]">
-                    <p className={styles.customLeftContentText}>서류첨부</p>
+                    <p className={styles.customLastContentText}>서류첨부</p>
                     <button className={styles.customContentButton}>
                         <span className={styles.customContentButtonText}>파일 선택</span>
                     </button>

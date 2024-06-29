@@ -1,7 +1,5 @@
-"use client"
-import React, { useState } from 'react';
-import { Table, Select, Tag } from 'antd';
-import config from '../../assets/memberlist.json';
+"use client";
+import React from 'react';
 import data from '../../assets/memberdropdown.json';
 import changeapproval from '../../assets/changeapproval.json';
 import { ColumnsType } from 'antd/es/table';
