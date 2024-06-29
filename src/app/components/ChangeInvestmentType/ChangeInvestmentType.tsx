@@ -4,15 +4,11 @@ import styles from "./styles.module.css";
 interface ChangeInvestmentTypeProps {
   isOpen: boolean;
   onClose: () => void;
-  imageUrl: string;
-  modalContent: string;
 }
 
 const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
   isOpen,
   onClose,
-  imageUrl,
-  modalContent,
 }) => {
   const handleCloseClick = () => onClose();
 
