@@ -1,0 +1,12 @@
+{
+    "headers": [
+      {
+        "name": "header1",
+        "dropdownOptions": [
+          { "value": 1, "label": "승인상태 변경" }
+        ],
+        "defaultOption": 1 
+      }
+    ]
+  }
+  

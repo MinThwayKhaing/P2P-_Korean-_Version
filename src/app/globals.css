@@ -15,6 +15,8 @@
   --text-color: #0b101a;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --drop-down-color:#141F2D;
+  --table-background-color:#EEF0F4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +30,7 @@
 body {
   min-height: 100vh;
   background: var(--color-background);
+  overflow-x: auto;
 }
 
 @layer utilities {
@@ -56,7 +59,10 @@ nav {
   padding: 10px;
   background: var(--disabled-color);
 }
-
+button, select
+{
+  font-family: Pretendard;
+}
 .first-nav {
   border-radius: 8px 0 0 8px;
 }
@@ -112,15 +118,17 @@ h4 {
   height: 38.92px;
 }
 hr {
+  min-width: 1170px;
   border-width: 1px 0px 0px 0px;
   border-style: solid;
   border-color: var(--disabled-border-color);
 }
 .table-head{
-  min-height: 39px;
-  padding: 7.5px;
+  min-width: 1170px;
+  height: 39px;
   margin-bottom: 12px;
-
+  gap: 513px;
+  padding-right: 9px;
 }
 .nav-font-size {
   font-weight: 400;
@@ -131,32 +139,54 @@ hr {
 }
 .table_head--left
 {
-  width: 243px;
-  min-height: 24px;
-  gap: 8px;
+  width: fit-content;
+  max-width: 225px;
+  height: fit-content;
+  max-height: 24px;
+  margin: 7.5px;
 }
 .table_head--right
 {
-  min-width: 458.45px;
-  min-width: 39px;
+  width: fit-content;
+  max-width: 423.3px;
+  height: fit-content;
+  max-height: 39px;
   margin-left: auto;
+  flex-wrap: nowrap;
   gap: 4px;
 }
-.table_head--right > div
-{
-  min-width: 150.15px;
-  min-height: 39px;
-  padding: 10px 12px 10px 12px;
-  gap: 8px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px ;
-  background-color: var(--color-background);
-
+.custom-select {
+  width: 150.15px;
+  height: 39px;
+ 
+ 
 }
+
+.custom-select .ant-select-selector {
+  padding: 10px 12px !important;
+  height: 100% !important;
+  line-height: 39px !important;  
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+}
+
+.ant-select-selection-item {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+  letter-spacing: -0.019999999552965164px;
+  text-align: left;
+  color: var(--disabled-button-color);
+  line-height: 39px !important; /* Centers the selected item text vertically */
+}
+
 .table_head--right > button
 {
-  min-width: 115px;
-  min-height:39px;
+
+  width: 115px;
+  max-height:39px;
+  height: fit-content;
   padding: 10px 12px 10px 12px;
   gap: 21px;
   border: 1px solid var(--border-color);
@@ -174,17 +204,153 @@ color: var(--disabled-button-color);
 {
   padding-top: 12.26px;
 }
-.table_body > button
+.table_body_head
 {
-  min-width: 100px;
-  min-height: 39px;
+  min-width: 1170px;
+  display: flex;
+  gap: 739px;
+}
+.table_body--right
+{
+  width: fit-content;
+  max-width: 331.15px;
+  height: fit-content;
+  max-height: 39px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+.table_body--right > button
+{
+  width: 100px;
+height: 39px;
+padding: 10px 16px;
+margin-left: 4px;
+}
+.table_body--right > span
+{
+  width: 61px;
+  height: 17px;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.71px;
+  text-align: left;
+  color: var(--table-sub-head-color);
+  margin: 11px 16px 11px 0px;
+ 
+}
+.table_body_head > button
+{
+width: 100px;
+height: 39px;
+padding: 10px 16px;
 }
 button
 {
-  padding: 17px 16px 17px 16px;
   gap: 10px;
   border-radius: 10px;
   opacity: 0px;
   background: var(--background-button-color);
   color: var(--color-background);
+}
+
+.ant-select-dropdown-menu {
+  height: fit-content;  
+  max-height: 132px !important;
+  border-radius: 8px  !important;
+  padding: 0px !important;
+}
+.ant-select-item-option
+{
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  background-color: var(--color-background) !important;
+  color: var(--drop-down-color);
+  line-height: 39px !important;
+}
+.ant-select-item-option:hover {
+  background-color:  var(--background-button-color)!important;
+  color: var(--color-background) !important;
+}
+.ant-select-arrow {
+  transition: transform 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.ant-select-open .ant-select-arrow {
+  transform: rotate(180deg); /* Rotate the arrow 180 degrees when dropdown is open */
+}
+.ant-table-thead > tr > th
+{
+  font-family: Pretendard;
+font-size: 16px;
+font-weight: 600 !important;
+line-height: 16px;
+letter-spacing: 0.04em;
+text-align: left !important;
+color: var(--disabled-button-color);
+  background-color: var(--table-background-color) !important;
+}
+.ant-table-row > td
+{
+  font-family: Pretendard;
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0.02em;
+text-align: left !important;
+color: var(--disabled-button-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper .ant-table-thead > tr > th:not(:last-child):not(.ant-table-row-expand-icon-cell):not([colspan])::before, 
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper .ant-table-thead > tr > td:not(:last-child):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper .ant-table-thead > tr > th.ant-table-selection-column::before {
+    position: absolute;
+    top: 50%;
+    inset-inline-end: 0;
+    width: 2px;
+    height: 100% !important;
+    background-color: var(--color-background) !important;
+    transform: translateY(-50%);
+    transition: background-color 0.5s;
+    content: "";
+}
+.table{
+  margin-top: 8px;
+}
+.ant-pagination-item
+{
+  width: 40px;
+  height: 40px !important;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 700 !important;
+  line-height: 40px !important;
+  text-align: left !important;
+  padding: 0px 15px;
+  background-color: var(--background-button-color) !important;
+}
+
+.ant-pagination-item > a{
+  padding: 0px !important;
+  color: var(--color-background) !important;
+}
+.ant-pagination-prev,
+.ant-pagination-next
+{
+  width: 40px;
+    height: 40px !important;
+    padding: 10px;
+}
+.anticon
+{
+  width: 100%;
+    height: 100%;
+    vertical-align: 1rem !important;
+}
+.anticon > svg
+{
+  width: 100%;
+  height: 100%;
 }

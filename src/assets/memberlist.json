@@ -1,0 +1,10 @@
+{
+    "data": [
+        { "no": 1, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인완료", "dormantStatus": "정상", "classification": "투자", "type": "일반개인", "guid": "U1JtXgAj5Q72Wn" },
+        { "no": 2, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인대기", "dormantStatus": "정상", "classification": "투자", "type": "개인", "guid": "U1JtXgAj5Q72Wn" },
+        { "no": 3, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인거절", "dormantStatus": "정상", "classification": "투자", "type": "일반개인", "guid": "U1JtXgAj5Q72Wn" },
+        { "no": 4, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인대기", "dormantStatus": "정상", "classification": "투자", "type": "개인", "guid": "U1JtXgAj5Q72Wn" },
+        { "no": 5, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인대기", "dormantStatus": "정상", "classification": "투자", "type": "일반개인", "guid": "U1JtXgAj5Q72Wn" },
+        { "no": 6, "memberNumber": "Abc123", "name": "김마리", "phone": "010-1234-5678", "email": "aaaaaaaabc@naver.com", "approvalStatus": "승인대기", "dormantStatus": "정상", "classification": "투자", "type": "개인", "guid": "U1JtXgAj5Q72Wn" }
+    ]
+}
