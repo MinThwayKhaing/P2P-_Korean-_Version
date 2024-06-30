@@ -22,7 +22,7 @@
 
 .customGrid {
     border: 1px solid var(--disabled-border-color);
-    margin: 20px 24px 8px 24px
+    margin: 20px 24px 8px 24px;
 }
 
 .customLeftContentText1 {
@@ -56,7 +56,6 @@
     color: var(--text-color);
     background-color: #EEF0F4;
     padding: 15px 0 15px 16px;
-    border-bottom: 1px solid #FFFFFF;
     display: flex;
     align-items: center;
 }
@@ -68,7 +67,6 @@
     line-height: 16.71px;
     color: var(--text-color);
     padding: 15px 16px 15px 16px;
-    border-bottom: 1px solid var(--disabled-border-color);
 }
 
 .customPrimaryButton {
@@ -106,4 +104,37 @@
     text-align: center;
     padding: 17px 16px;
     color: var(--text-color);
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 20px 24px 8px 24px;
+}
+
+.gridItem {
+    border: 1px solid var(--disabled-border-color);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+}
+
+.customLastLeftContentText1 {
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.09px;
+    color: var(--text-color);
+    background-color: #EEF0F4;
+    padding: 15px 16px 15px 16px;
+}
+
+.customLastRightContentText1 {
+    height: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.71px;
+    color: var(--text-color);
+    padding: 15px 16px 15px 16px;
 }

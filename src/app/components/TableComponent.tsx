@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Table, Select } from "antd";
 import { ColumnsType } from "antd/es/table";
 import Link from "next/link";
+import RegisterReason from "./RegisterReason/RegisterReason";
 
 interface TableComponentProps {
   tableheader: String;
@@ -25,17 +26,32 @@ const TableComponent: React.FC<TableComponentProps> = ({
   onExistingTypeClick,
 }) => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+  const [selectedRows, setSelectedRows] = useState<React.Key[]>([]);
   const [pageSize, setPageSize] = useState<number>(50); // Default page size to 50
+  const [isRegisterReasonOpen, setIsRegisterReasonOpen] = useState(false); // State for modal
+  const [selectedValue, setSelectedValue] = useState({});
+
+  const handleChange = (value: number) => {
+    setSelectedValue(value);
+  };
 
   const onSelectChange = (
     newSelectedRowKeys: React.Key[],
-    selectedRows: any[]
+    newSelectedRows: any[]
   ) => {
+    setSelectedRows(newSelectedRows);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
   const handlePageSizeChange = (value: number) => {
     setPageSize(value);
+  };
+
+  // Function to handle click on existingType column
+  const handleExistingTypeClick = () => {
+    if (selectedRows.length && selectedValue == 3) {
+      setIsRegisterReasonOpen(true);
+    }
   };
 
   return (
@@ -104,6 +120,7 @@ const TableComponent: React.FC<TableComponentProps> = ({
                   className="custom-select"
                   popupClassName="ant-select-dropdown-menu"
                   listHeight={132}
+                  onChange={(value) => handleChange(value)}
                 >
                   {header.dropdownOptions.map((option: any) => (
                     <Select.Option
@@ -119,7 +136,13 @@ const TableComponent: React.FC<TableComponentProps> = ({
                 </Select>
               ))}
             </div>
-            <button>저장</button>
+            <button onClick={() => handleExistingTypeClick()}>저장</button>
+            <RegisterReason
+              rows={selectedRows}
+              isOpen={isRegisterReasonOpen}
+              onClose={() => setIsRegisterReasonOpen(false)}
+            />{" "}
+            {/* Render modal */}
           </div>
         </div>
         <div className="table">
