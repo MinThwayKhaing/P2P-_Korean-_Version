@@ -136,15 +136,19 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
             <div style={dividerStyle}></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto]">
-                <p className={styles.customLeftContentText}>회원번호</p>
-                <p className={styles.customRightContentText}>{memberId}</p>
+                <div className={styles.customLeftContentText}>회원번호</div>
+                <div className={styles.customRightContentText}>{memberId}</div>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <p className={styles.customLeftContentText}>회원명/법인명</p>
-                <p className={styles.customRightContentText}>{memberName}</p>
+                <div className={styles.customLeftContentText}>
+                  회원명/법인명
+                </div>
+                <div className={styles.customRightContentText}>
+                  {memberName}
+                </div>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <p
+                <div
                   className={`${styles.customLeftContentText} flex items-start gap-1`}
                 >
                   투자유형
@@ -155,8 +159,8 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                     height={4}
                     priority
                   />
-                </p>
-                <p className={styles.customRightContentTextSelect}>
+                </div>
+                <div className={styles.customRightContentTextSelect}>
                   {typeOfInvestment.headers.map((header: any) => (
                     <Select
                       key={header.name}
@@ -183,10 +187,10 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                       ))}
                     </Select>
                   ))}
-                </p>
+                </div>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <p
+                <label
                   className={`${styles.customLastContentText} flex items-start gap-1`}
                 >
                   서류첨부
@@ -197,7 +201,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                     height={4}
                     priority
                   />
-                </p>
+                </label>
                 <div className={styles.customContentButton}>
                   <label className={styles.customContentButtonText}>
                     파일 선택
@@ -231,12 +235,12 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                 </div>
               </div>
             </div>
-            <p className={styles.customContentText1}>
+            <div className={styles.customContentText1}>
               파일 형식은 jpg, jpeg, gif, png, pdf만 가능합니다.
-            </p>
-            <p className={styles.customContentText2}>
+            </div>
+            <div className={styles.customContentText2}>
               최대 10개, 100MB까지 등록이 가능합니다.
-            </p>
+            </div>
             <div style={dividerStyle}></div>
             <div className="flex justify-center">
               <button
