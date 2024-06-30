@@ -73,7 +73,7 @@ interface ApplicationData {
 const BasicInformationManagement: React.FC = () => {
     const waitingApproval = 1;
     const header = "회원 목록";
-    const showDownloadButton = true;
+    const showDownloadButton = false;
     const pathname = usePathname();
     const parts = pathname.split('/');
     const memberId = parts[3];

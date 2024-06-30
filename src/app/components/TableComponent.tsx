@@ -100,7 +100,7 @@ const TableComponent: React.FC<TableComponentProps> = ({
                                 </Select>
                             ))}
                         </div>
-                        {showDownloadButton && <button>저장</button>}
+                         <button>저장</button>
                     </div>
                 </div>
                 <div className="table">
