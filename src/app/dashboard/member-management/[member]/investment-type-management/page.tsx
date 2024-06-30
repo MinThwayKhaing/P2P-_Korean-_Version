@@ -104,7 +104,7 @@ const BasicInformationManagement: React.FC = () => {
             // Example async operation to fetch column data
             const fetchedColumns: ColumnsType<ApplicationData> = [
                 { title: 'NO', dataIndex: 'no', key: 'no' },
-                { title: '기존유형', dataIndex: 'existingType', key: 'existingType', render: (text: string) => <span onClick={() => handleExistingTypeClick(text)}>{text}</span> }, // Add onClick handler
+                { title: '기존유형', dataIndex: 'existingType', key: 'existingType', render: (text: string) => <span className='cursor-pointer' onClick={() => handleExistingTypeClick(text)}>{text}</span> }, // Add onClick handler
                 { title: '신청유형', dataIndex: 'applicationType', key: 'applicationType' },
                 { 
                     title: '제출서류', 
@@ -156,7 +156,7 @@ const BasicInformationManagement: React.FC = () => {
                     columns={columns}
                     onExistingTypeClick={handleExistingTypeClick} // Pass callback function
                 />
-                <ChangeInvestmentType isOpen={isChangeInvestmentTypeOpen} onClose={() => setIsChangeInvestmentTypeOpen(false)} /> {/* Render modal */}
+                <ChangeInvestmentType memberId={memberId} isOpen={isChangeInvestmentTypeOpen} onClose={() => setIsChangeInvestmentTypeOpen(false)} /> {/* Render modal */}
             </div>
         </>
     );

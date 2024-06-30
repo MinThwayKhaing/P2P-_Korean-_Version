@@ -46,6 +46,7 @@
     padding: 15px 16px 15px 20px;
     border-bottom: 1px solid var(--disabled-border-color);
 }
+
 .customRightContentTextSelect {
     height: 50px;
     font-size: 14px;
@@ -55,7 +56,6 @@
     padding: 6px 0px 7px 8px;
     border-bottom: 1px solid var(--disabled-border-color);
 }
-
 
 .customLastContentText {
     width: 160px;
@@ -69,21 +69,23 @@
 }
 
 .customContentButton {
-    width: 76px;
     height: 37px;
-    border-radius: 8px;
-    background-color: var(--disabled-color);
+    display: flex;
+    align-items: center;
     margin: 6px 0 7px 8px;
-    padding: 0;
 }
 
 .customContentButtonText {
+    border-radius: 8px;
+    background-color: var(--disabled-color);
     font-size: 14px;
     font-weight: 400;
     line-height: 16.8px;
     text-align: center;
     padding: 10px 12px;
     color: #222222;
+    cursor: pointer;
+    margin-right: 20px;
 }
 
 .customContentText1 {
@@ -141,8 +143,33 @@
     padding: 17px 16px;
     color: var(--text-color);
 }
-.modalCustomSelect
-{
-   min-width:  282.15px;
+
+.modalCustomSelect {
+    min-width: 282.15px;
     min-height: 37px;
+}
+
+.fileList {
+    display: flex;
+    gap: 12px;
+}
+
+.fileItem {
+    display: flex;
+    align-items: center;
+}
+
+.fileName {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.71px;
+    letter-spacing: -0.02px;
+    margin-right: 4px;
+    text-decoration: underline;
+    color: var(--table-sub-head-color);
+}
+
+.removeButton {
+    background-color: transparent;
+    cursor: pointer;
 }
