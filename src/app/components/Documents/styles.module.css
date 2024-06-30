@@ -61,12 +61,17 @@
 }
 
 .customRightContentText2 {
+    justify-content: center;
+    display: flex;
+    align-items: center;
     height: 300px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.71px;
-    color: var(--text-color);
-    padding: 15px 16px 15px 16px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.87px;
+    color: var(--table-sub-head-color);
+    margin: 16px 9px 8px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
 }
 
 .customPrimaryButton {
@@ -74,7 +79,6 @@
     height: 44px;
     border-radius: 10px;
     margin-top: 24px;
-    margin-right: 8px;
     padding: 0;
 }
 
@@ -91,9 +95,10 @@
     width: 170px;
     height: 44px;
     border-radius: 10px;
-    border: 1.5px solid var(--background-button-color);
+    border: 1px solid var(--disabled-border-color);
     margin-top: 24px;
-    background-color: #FFFFFF;
+    margin-right: 8px;
+    background-color: var(--disabled-color);
     padding: 0;
 }
 

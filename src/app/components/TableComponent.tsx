@@ -141,7 +141,7 @@ const TableComponent: React.FC<TableComponentProps> = ({
               rows={selectedRows}
               isOpen={isRegisterReasonOpen}
               onClose={() => setIsRegisterReasonOpen(false)}
-            />{" "}
+            />
             {/* Render modal */}
           </div>
         </div>

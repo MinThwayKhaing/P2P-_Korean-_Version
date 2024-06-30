@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
+import Documents from "../Documents/Documents";
 
 interface RegisterReasonProps {
   isOpen: boolean;
@@ -15,6 +16,7 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
 }) => {
   const [selectedReason, setSelectedReason] = useState("");
   const [isCheck, setIsCheck] = useState(false);
+  const [isDocumentsOpen, setIsDocumentsOpen] = useState(false); // State for modal
   const memberNumbers = rows.map((member) => member.memberNumber).join(", ");
   const names = rows.map((member) => member.name).join(", ");
 
@@ -37,8 +39,15 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
     setIsCheck(true);
   };
 
+  const handleConfirmClick = () => {
+    setIsDocumentsOpen(true);
+    // setIsCheck(false);
+    // onClose();
+  };
+
   const dividerStyle = {
     borderBottom: "1px solid var(--disabled-border-color)",
+    marginTop: "32px",
   };
 
   return (
@@ -75,8 +84,18 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                 <p className={styles.customRightContentText1}>{names}</p>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <p className={styles.customLeftContentText2}>승인거부 사유</p>
-                <p className={styles.customRightContentText2}>
+                <p className={`${styles.customLeftContentText2} gap-1`}>
+                  승인거부 사유
+                  <Image
+                    className="mb-4"
+                    src="/must.svg"
+                    alt="Must Logo"
+                    width={4}
+                    height={4}
+                    priority
+                  />
+                </p>
+                <div className={styles.customRightContentText2}>
                   <div className="flex items-center space-x-2 mb-2.5">
                     <label
                       className="relative flex items-center rounded-full cursor-pointer"
@@ -261,13 +280,13 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                             color: "var(--border-color)",
                           }
                     }
-                    className="mt-2.5 p-2 border border-gray-300 rounded-xl w-full h-20"
+                    className="mt-2.5 p-2 border border-gray-300 rounded-xl w-full h-24"
                     placeholder="사유 입력"
                     disabled={
                       selectedReason == "option6" && !isCheck ? false : true
                     }
                   />
-                </p>
+                </div>
               </div>
             </div>
             {isCheck && (
@@ -287,20 +306,36 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
               </div>
             )}
             <div style={dividerStyle}></div>
-            <div className="flex justify-center">
-              <button
-                className={styles.customPrimaryButton}
-                onClick={handleCheckClick}
-              >
-                <span className={styles.customPrimaryButtonText}>확인</span>
-              </button>
-              <button
-                className={styles.customSecondaryButton}
-                onClick={handleCloseClick}
-              >
-                <span className={styles.customSecondaryButtonText}>취소</span>
-              </button>
-            </div>
+            {!isCheck && (
+              <div className="flex justify-center">
+                <button
+                  className={styles.customPrimaryButton}
+                  onClick={handleCheckClick}
+                >
+                  <span className={styles.customPrimaryButtonText}>확인</span>
+                </button>
+                <button
+                  className={styles.customSecondaryButton}
+                  onClick={handleCloseClick}
+                >
+                  <span className={styles.customSecondaryButtonText}>취소</span>
+                </button>
+              </div>
+            )}
+            {isCheck && (
+              <div className="flex justify-center">
+                <button
+                  className={styles.customPrimaryButton}
+                  onClick={handleConfirmClick}
+                >
+                  <span className={styles.customPrimaryButtonText}>확인</span>
+                </button>
+                <Documents
+                  isOpen={isDocumentsOpen}
+                  onClose={() => setIsDocumentsOpen(false)}
+                />
+              </div>
+            )}
           </div>
         </div>
       )}

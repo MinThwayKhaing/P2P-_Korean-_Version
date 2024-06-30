@@ -136,19 +136,15 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
             <div style={dividerStyle}></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto]">
-                <div className={styles.customLeftContentText}>회원번호</div>
-                <div className={styles.customRightContentText}>{memberId}</div>
+                <p className={styles.customLeftContentText}>회원번호</p>
+                <p className={styles.customRightContentText}>{memberId}</p>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <div className={styles.customLeftContentText}>
-                  회원명/법인명
-                </div>
-                <div className={styles.customRightContentText}>
-                  {memberName}
-                </div>
+                <p className={styles.customLeftContentText}>회원명/법인명</p>
+                <p className={styles.customRightContentText}>{memberName}</p>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <div
+                <p
                   className={`${styles.customLeftContentText} flex items-start gap-1`}
                 >
                   투자유형
@@ -159,7 +155,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                     height={4}
                     priority
                   />
-                </div>
+                </p>
                 <div className={styles.customRightContentTextSelect}>
                   {typeOfInvestment.headers.map((header: any) => (
                     <Select
@@ -190,7 +186,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                 </div>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <label
+                <p
                   className={`${styles.customLastContentText} flex items-start gap-1`}
                 >
                   서류첨부
@@ -201,7 +197,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                     height={4}
                     priority
                   />
-                </label>
+                </p>
                 <div className={styles.customContentButton}>
                   <label className={styles.customContentButtonText}>
                     파일 선택
