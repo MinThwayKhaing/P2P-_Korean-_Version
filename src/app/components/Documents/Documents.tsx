@@ -14,11 +14,6 @@ const Documents: React.FC<DocumentsProps> = ({ isOpen, onClose }) => {
 
   const handleCheckClick = () => {};
 
-  const dividerStyle = {
-    borderBottom: "1px solid var(--disabled-border-color)",
-    marginTop: "32px",
-  };
-
   return (
     <>
       {isOpen && (
@@ -40,9 +35,13 @@ const Documents: React.FC<DocumentsProps> = ({ isOpen, onClose }) => {
                 onClick={handleCloseClick}
               />
             </div>
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+              }}
+            ></div>
             <div className={styles.customGrid}>
-              <div className="grid grid-cols-[160px_auto]">
+              <div className="grid grid-cols-[160px_auto] h-96 overflow-y-auto">
                 <p className={`${styles.customLeftContentText2} gap-1`}>
                   서류
                   <Image
@@ -54,10 +53,18 @@ const Documents: React.FC<DocumentsProps> = ({ isOpen, onClose }) => {
                     priority
                   />
                 </p>
-                <p className={styles.customRightContentText2}>img</p>
+                <div>
+                  <p className={styles.customRightContentText2}>img</p>
+                  <p className={styles.customRightContentText2}>img</p>
+                </div>
               </div>
             </div>
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+                marginTop: "32px",
+              }}
+            ></div>
             <div className="flex justify-center">
               <button
                 className={styles.customSecondaryButton}

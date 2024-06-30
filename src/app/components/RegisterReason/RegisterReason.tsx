@@ -45,11 +45,6 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
     // onClose();
   };
 
-  const dividerStyle = {
-    borderBottom: "1px solid var(--disabled-border-color)",
-    marginTop: "32px",
-  };
-
   return (
     <>
       {isOpen && (
@@ -71,7 +66,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                 onClick={handleCloseClick}
               />
             </div>
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+              }}
+            ></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto]">
                 <p className={styles.customLeftContentText1}>회원번호</p>
@@ -305,7 +304,12 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                 </div>
               </div>
             )}
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+                marginTop: "32px",
+              }}
+            ></div>
             {!isCheck && (
               <div className="flex justify-center">
                 <button
