@@ -3,7 +3,10 @@
       {
         "name": "header1",
         "dropdownOptions": [
-          { "value": 1, "label": "승인상태 변경" }
+          { "value": 1, "label": "승인상태 변경","disabledStatus":true  },
+          { "value": 2, "label": "승인완료" },
+          { "value": 3, "label": "승인거부" }
+          
         ],
         "defaultOption": 1 
       }

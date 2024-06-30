@@ -13,20 +13,19 @@
       {
         "name": "header3",
         "dropdownOptions": [
-          { "value": 1, "label": "승인상태 변경" },
-          { "value": 2, "label": "승인완료" },
-          { "value": 3, "label": "승인거부" }
+          { "value": 1, "label": "신청일시순" },
+          { "value": 10, "label": "승인일시순" }
         ],
-        "defaultOption": 1 
+        "defaultOption": 1  
       },
       {
         "name": "header2",
         "dropdownOptions": [
           { "value": 50, "label": "50개씩 보기" },
-          { "value": 100, "label": "10개씩 보기" },
-          { "value": 150, "label": "15개씩 보기" }
+          { "value": 10, "label": "10개씩 보기" },
+          { "value": 15, "label": "15개씩 보기" }
         ],
-        "defaultOption": 50  
+        "defaultOption": 1  
       }
     ]
   }

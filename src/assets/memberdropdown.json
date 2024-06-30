@@ -10,9 +10,11 @@
       {
         "name": "header2",
         "dropdownOptions": [
-          { "value": 1, "label": "50개씩 보기" }
+          { "value": 50, "label": "50개씩 보기" },
+          { "value": 100, "label": "10개씩 보기" },
+          { "value": 150, "label": "15개씩 보기" }
         ],
-        "defaultOption": 1  
+        "defaultOption": 50
       }
     ]
   }

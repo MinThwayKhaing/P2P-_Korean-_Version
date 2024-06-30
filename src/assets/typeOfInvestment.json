@@ -1,0 +1,19 @@
+{
+    "headers": [
+      {
+        "name": "header1",
+        "dropdownOptions": [
+          { "value": 1, "label": "일반개인" },
+          { "value": 2, "label": "소득적격" },
+          { "value": 3, "label": "개인전문" },
+          { "value": 4, "label": "법인" },
+          { "value": 5, "label": "여신금융" },
+          { "value": 6, "label": "P2P온투" }
+          
+        ],
+        "defaultOption": 1 
+      }
+     
+    ]
+  }
+  
