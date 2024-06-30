@@ -6,6 +6,7 @@ interface AlertProps {
   onClose: () => void;
   imageUrl: string;
   modalContent: string;
+  onAction: (action: "close" | "check") => void;
 }
 
 const Alert: React.FC<AlertProps> = ({
@@ -13,11 +14,16 @@ const Alert: React.FC<AlertProps> = ({
   onClose,
   imageUrl,
   modalContent,
+  onAction,
 }) => {
-  const handleCloseClick = () => onClose();
+  const handleCloseClick = () => {
+    onAction("close");
+    onClose();
+  };
 
   const handleCheckClick = () => {
-    handleCloseClick();
+    onAction("check");
+    onClose();
   };
 
   return (
@@ -32,7 +38,7 @@ const Alert: React.FC<AlertProps> = ({
             <div className="flex justify-between items-center">
               <Image
                 src={imageUrl}
-                alt="Warning Logo"
+                alt="Logo"
                 width={30}
                 height={30}
                 priority
@@ -49,7 +55,10 @@ const Alert: React.FC<AlertProps> = ({
             </div>
             <p className={styles.customContentText}>{modalContent}</p>
             <div className="text-center">
-              <button className={styles.customPrimaryButton} onClick={handleCheckClick}>
+              <button
+                className={styles.customPrimaryButton}
+                onClick={handleCheckClick}
+              >
                 <span className={styles.customPrimaryButtonText}>확인</span>
               </button>
             </div>

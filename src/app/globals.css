@@ -439,3 +439,8 @@ button {
   text-align: center;
   color: var(--color-background);
 }
+
+/* .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--background-button-color);
+  border-color: var(--background-button-color);
+} */

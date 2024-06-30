@@ -6,6 +6,7 @@ interface ConfirmProps {
   onClose: () => void;
   imageUrl: string;
   modalContent: string;
+  onAction: (action: "close" | "check") => void;
 }
 
 const Confirm: React.FC<ConfirmProps> = ({
@@ -13,11 +14,16 @@ const Confirm: React.FC<ConfirmProps> = ({
   onClose,
   imageUrl,
   modalContent,
+  onAction,
 }) => {
-  const handleCloseClick = () => onClose();
+  const handleCloseClick = () => {
+    onAction("close");
+    onClose();
+  };
 
   const handleCheckClick = () => {
-    handleCloseClick();
+    onAction("check");
+    onClose();
   };
 
   return (
@@ -49,10 +55,16 @@ const Confirm: React.FC<ConfirmProps> = ({
             </div>
             <p className={styles.customContentText}>{modalContent}</p>
             <div className="flex justify-center">
-              <button className={styles.customPrimaryButton} onClick={handleCheckClick}>
+              <button
+                className={styles.customPrimaryButton}
+                onClick={handleCheckClick}
+              >
                 <span className={styles.customPrimaryButtonText}>확인</span>
               </button>
-              <button className={styles.customSecondaryButton} onClick={handleCloseClick}>
+              <button
+                className={styles.customSecondaryButton}
+                onClick={handleCloseClick}
+              >
                 <span className={styles.customSecondaryButtonText}>취소</span>
               </button>
             </div>
