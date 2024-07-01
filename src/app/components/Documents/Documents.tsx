@@ -1,18 +1,68 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { useState } from "react";
+import Alert from "../Alert/Alert";
+import Confirm from "../Confirm/Confirm";
 
 interface DocumentsProps {
   isOpen: boolean;
   onClose: () => void;
+  rows: any[];
+  selectedReason: string;
 }
 
-const Documents: React.FC<DocumentsProps> = ({ isOpen, onClose }) => {
+const Documents: React.FC<DocumentsProps> = ({
+  isOpen,
+  onClose,
+  rows,
+  selectedReason,
+}) => {
+  const [imageUrl, setImageUrl] = useState("");
+  const [modalContent, setModalContent] = useState("");
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+
   const handleCloseClick = () => {
     onClose();
   };
 
-  const handleCheckClick = () => {};
+  const handleCheckClick = () => {
+    let errorOccurred = false;
+
+    if (!selectedReason) {
+      setImageUrl("/warning.svg");
+      setModalContent("필수입력항목을 입력해주세요.");
+      errorOccurred = true;
+    } else if (rows.some((member) => member.approvalStatus === "승인완료")) {
+      setImageUrl("/warning.svg");
+      setModalContent("이미 승인 완료된 회원입니다.");
+      errorOccurred = true;
+    } else if (rows.some((member) => member.approvalStatus === "승인거절")) {
+      setImageUrl("/warning.svg");
+      setModalContent("이미 승인 거부된 회원입니다.");
+      errorOccurred = true;
+    }
+
+    if (errorOccurred) {
+      setIsAlertOpen(true);
+      return;
+    }
+
+    // Proceed with valid files
+    setImageUrl(""); // Clear previous alert image if any
+    setModalContent(""); // Clear previous alert content if any
+    setIsConfirmOpen(true); // Open the confirmation modal
+  };
+
+  const handleAlertAction = (action: "close" | "check") => {};
+
+  const handleConfirmAction = (action: "close" | "check") => {
+    if (action === "check") {
+      setImageUrl("/success.svg");
+      setModalContent("저장되었습니다.");
+      setIsAlertOpen(true);
+    }
+  };
 
   return (
     <>
@@ -80,6 +130,20 @@ const Documents: React.FC<DocumentsProps> = ({ isOpen, onClose }) => {
               >
                 <span className={styles.customPrimaryButtonText}>확인</span>
               </button>
+              <Alert
+                imageUrl={imageUrl}
+                modalContent={modalContent}
+                isOpen={isAlertOpen}
+                onClose={() => setIsAlertOpen(false)}
+                onAction={handleAlertAction}
+              />
+              <Confirm
+                imageUrl="/warning.svg"
+                modalContent={`선택된 ${rows.length}명의 승인상태를 변경하시겠습니까?`}
+                isOpen={isConfirmOpen}
+                onClose={() => setIsConfirmOpen(false)}
+                onAction={handleConfirmAction}
+              />
             </div>
           </div>
         </div>

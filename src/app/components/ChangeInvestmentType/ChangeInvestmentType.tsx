@@ -108,10 +108,6 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
     }
   };
 
-  const dividerStyle = {
-    borderBottom: "1px solid var(--disabled-border-color)",
-  };
-
   return (
     <>
       {isOpen && (
@@ -133,7 +129,11 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                 onClick={onClose}
               />
             </div>
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+              }}
+            ></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto]">
                 <p className={styles.customLeftContentText}>회원번호</p>
@@ -237,7 +237,11 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
             <div className={styles.customContentText2}>
               최대 10개, 100MB까지 등록이 가능합니다.
             </div>
-            <div style={dividerStyle}></div>
+            <div
+              style={{
+                borderBottom: "1px solid var(--disabled-border-color)",
+              }}
+            ></div>
             <div className="flex justify-center">
               <button
                 className={styles.customPrimaryButton}

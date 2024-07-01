@@ -32,6 +32,7 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
 
   const handleCloseClick = () => {
     setIsCheck(false);
+    setSelectedReason("");
     onClose();
   };
 
@@ -335,6 +336,8 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                   <span className={styles.customPrimaryButtonText}>확인</span>
                 </button>
                 <Documents
+                  selectedReason={selectedReason}
+                  rows={rows}
                   isOpen={isDocumentsOpen}
                   onClose={() => setIsDocumentsOpen(false)}
                 />
