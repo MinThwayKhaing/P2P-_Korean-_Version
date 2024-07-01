@@ -182,4 +182,5 @@
 .removeButton {
     background-color: transparent;
     cursor: pointer;
+    min-width: 15px;
 }

@@ -1,7 +1,8 @@
 .customContainer {
+    width: 800px;
+    height: auto;
     padding-top: 24px;
     padding-bottom: 24px;
-    width: 800px;
     background: #FFFFFF;
     border-radius: 12px;
     z-index: 50;
@@ -23,11 +24,13 @@
 .customGrid {
     border: 1px solid var(--disabled-border-color);
     margin: 20px 24px 0 24px;
+    width: 751px;
+    height: 719px;
 }
 
-.customLeftContentText1 {
+.customLeftContentText {
     width: 160px;
-    height: 50px;
+    height: 719px;
     font-size: 16px;
     font-weight: 500;
     line-height: 19.09px;
@@ -37,41 +40,19 @@
     border-bottom: 1px solid #FFFFFF;
 }
 
-.customRightContentText1 {
-    height: 50px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.71px;
-    color: var(--text-color);
-    padding: 15px 16px 15px 16px;
-    border-bottom: 1px solid var(--disabled-border-color);
-}
-
-.customLeftContentText2 {
-    width: 160px;
-    height: 77vh;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.09px;
-    color: var(--text-color);
-    background-color: #EEF0F4;
-    padding: 15px 0 15px 16px;
-    display: flex;
-    align-items: center;
-}
-
-.customRightContentText2 {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    height: 300px;
+.customRightContentText {
+    width: 591px;
+    height: 719px;
     font-size: 20px;
     font-weight: 500;
     line-height: 23.87px;
     color: var(--table-sub-head-color);
-    margin: 16px 9px 8px 16px;
-    border-radius: 10px;
+    margin: 16px 16px 8px 16px;
     border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .customPrimaryButton {
@@ -109,37 +90,4 @@
     text-align: center;
     padding: 17px 16px;
     color: var(--text-color);
-}
-
-.gridContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-    margin: 20px 24px 0 24px;
-}
-
-.gridItem {
-    border: 1px solid var(--disabled-border-color);
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    align-items: center;
-}
-
-.customLastLeftContentText1 {
-    height: 50px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.09px;
-    color: var(--text-color);
-    background-color: #EEF0F4;
-    padding: 15px 16px 15px 16px;
-}
-
-.customLastRightContentText1 {
-    height: 50px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.71px;
-    color: var(--text-color);
-    padding: 15px 16px 15px 16px;
 }

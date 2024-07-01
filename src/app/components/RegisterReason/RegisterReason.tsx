@@ -105,7 +105,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option1"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -134,7 +138,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option2"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -163,7 +171,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option3"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -192,7 +204,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option4"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -222,7 +238,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option5"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -251,7 +271,11 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                         id="option6"
                         name="reason"
                         type="radio"
-                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                        className={`${
+                          !isCheck
+                            ? styles.customRadio
+                            : styles.customDisabledRadio
+                        } peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border`}
                         onChange={handleRadioChange}
                         disabled={isCheck && true}
                       />
@@ -291,16 +315,16 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
             {isCheck && (
               <div className={styles.gridContainer}>
                 <div className={styles.gridItem}>
-                  <p className={styles.customLastLeftContentText1}>
+                  <p className={styles.customLastLeftContentText}>
                     최근저장일시
                   </p>
-                  <p className={styles.customLastRightContentText1}>
+                  <p className={styles.customLastRightContentText}>
                     {getCurrentDate()}
                   </p>
                 </div>
                 <div className={styles.gridItem}>
-                  <p className={styles.customLastLeftContentText1}>관리자</p>
-                  <p className={styles.customLastRightContentText1}>김관리자</p>
+                  <p className={styles.customLastLeftContentText}>관리자</p>
+                  <p className={styles.customLastRightContentText}>김관리자</p>
                 </div>
               </div>
             )}

@@ -92,7 +92,7 @@ const Documents: React.FC<DocumentsProps> = ({
             ></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto] h-96 overflow-y-auto">
-                <p className={`${styles.customLeftContentText2} gap-1`}>
+                <p className={`${styles.customLeftContentText} gap-1`}>
                   서류
                   <Image
                     className="mb-4"
@@ -104,8 +104,8 @@ const Documents: React.FC<DocumentsProps> = ({
                   />
                 </p>
                 <div>
-                  <p className={styles.customRightContentText2}>img</p>
-                  <p className={styles.customRightContentText2}>img</p>
+                  <p className={styles.customRightContentText}>img</p>
+                  <p className={styles.customRightContentText}>img</p>
                 </div>
               </div>
             </div>
