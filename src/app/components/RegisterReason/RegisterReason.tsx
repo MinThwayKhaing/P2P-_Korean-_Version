@@ -55,7 +55,7 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
             onClick={handleCloseClick}
           />
           <div className={styles.customContainer}>
-            <div className="flex justify-between items-center pb-5">
+            <div className="flex justify-between items-center">
               <h1 className={styles.customHeaderText}>승인거부 사유 입력</h1>
               <Image
                 className={styles.customCloseIcon}
@@ -70,18 +70,17 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
             <div
               style={{
                 borderBottom: "1px solid var(--disabled-border-color)",
+                paddingTop: "20px",
               }}
             ></div>
             <div className={styles.customGrid}>
               <div className="grid grid-cols-[160px_auto]">
-                <p className={styles.customLeftContentText1}>회원번호</p>
-                <p className={styles.customRightContentText1}>
-                  {memberNumbers}
-                </p>
+                <p className={styles.customLeftContentText}>회원번호</p>
+                <p className={styles.customRightContentText}>{memberNumbers}</p>
               </div>
               <div className="grid grid-cols-[160px_auto]">
-                <p className={styles.customLeftContentText1}>회원명/법인명</p>
-                <p className={styles.customRightContentText1}>{names}</p>
+                <p className={styles.customLeftContentText}>회원명/법인명</p>
+                <p className={styles.customRightContentText}>{names}</p>
               </div>
               <div className="grid grid-cols-[160px_auto]">
                 <p className={`${styles.customLeftContentText2} gap-1`}>
