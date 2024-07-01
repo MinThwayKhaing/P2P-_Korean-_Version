@@ -23,6 +23,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
   const [files, setFiles] = useState<File[]>([]);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const [isErrorOccurred, setIsErrorOccurred] = useState(false);
 
   const memberName = [
     ...new Set(
@@ -35,22 +36,12 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newFiles = Array.from(event.target.files || []);
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-  };
 
-  const handleRemoveFile = (index: number) => {
-    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
-  };
-
-  const handleCheckClick = () => {
     let errorOccurred = false;
+    let errorMessage = "";
 
-    if (!files.length) {
-      setImageUrl("/warning.svg");
-      setModalContent("필수입력항목을 입력해주세요.");
-      errorOccurred = true;
-    } else if (files.length > 10) {
-      setImageUrl("/warning.svg");
-      setModalContent("최대 10개까지 등록 가능합니다.");
+    if (newFiles.length + files.length > 10) {
+      errorMessage = "최대 10개까지 등록 가능합니다.";
       errorOccurred = true;
     } else {
       const allowedTypes = [
@@ -59,26 +50,57 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
         "image/gif",
         "application/pdf",
       ];
-      const invalidFiles = files.filter(
+      const invalidFiles = newFiles.filter(
         (file) => !allowedTypes.includes(file.type)
       );
 
       if (invalidFiles.length > 0) {
-        setImageUrl("/warning.svg");
-        setModalContent("jpg, jpeg, gif, png, pdf 파일만 등록 가능합니다.");
+        errorMessage = "jpg, jpeg, gif, png, pdf 파일만 등록 가능합니다.";
         errorOccurred = true;
       } else {
-        const totalSize = files.reduce((acc, file) => acc + file.size, 0);
+        const totalSize = [...files, ...newFiles].reduce(
+          (acc, file) => acc + file.size,
+          0
+        );
         if (totalSize > 100 * 1024 * 1024) {
           // 100MB in bytes
-          setImageUrl("/warning.svg");
-          setModalContent("최대 100MB까지 등록 가능합니다.");
+          errorMessage = "최대 100MB까지 등록 가능합니다.";
           errorOccurred = true;
         }
       }
     }
 
+    setIsErrorOccurred(errorOccurred);
+
     if (errorOccurred) {
+      setImageUrl("/warning.svg");
+      setModalContent(errorMessage);
+      setIsAlertOpen(true);
+      return;
+    }
+  };
+
+  const handleRemoveFile = (index: number) => {
+    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+  };
+
+  const handleCloseClick = () => {
+    setImageUrl("");
+    setModalContent("");
+    setFiles([]);
+    setIsErrorOccurred(false);
+    onClose();
+  };
+
+  const handleCheckClick = () => {
+    if (!files.length) {
+      setImageUrl("/warning.svg");
+      setModalContent("필수입력항목을 입력해주세요.");
+      setIsAlertOpen(true);
+      return;
+    } else if (isErrorOccurred) {
+      setImageUrl("/warning.svg");
+      setModalContent("파일 등록에 실패하였습니다.");
       setIsAlertOpen(true);
       return;
     }
@@ -89,16 +111,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
     setIsConfirmOpen(true); // Open the confirmation modal
   };
 
-  const handleAlertAction = (action: "close" | "check") => {
-    // if (action === "check") {
-    //   setImageUrl("/warning.svg");
-    //   setModalContent("파일 등록에 실패했습니다.");
-    //   const alertTimeout = setTimeout(() => {
-    //     setIsAlertOpen(true);
-    //   }, 1000);
-    //   return () => clearTimeout(alertTimeout);
-    // }
-  };
+  const handleAlertAction = (action: "close" | "check") => {};
 
   const handleConfirmAction = (action: "close" | "check") => {
     if (action === "check") {
@@ -114,7 +127,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
             className="absolute inset-0 bg-gray-500 opacity-75 cursor-pointer"
-            onClick={onClose}
+            onClick={handleCloseClick}
           />
           <div className={styles.customContainer}>
             <div className="flex justify-between items-center pb-5">
@@ -126,7 +139,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                 width={24}
                 height={24}
                 priority
-                onClick={onClose}
+                onClick={handleCloseClick}
               />
             </div>
             <div
@@ -265,7 +278,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
               />
               <button
                 className={styles.customSecondaryButton}
-                onClick={onClose}
+                onClick={handleCloseClick}
               >
                 <span className={styles.customSecondaryButtonText}>취소</span>
               </button>

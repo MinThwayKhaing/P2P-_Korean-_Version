@@ -31,8 +31,8 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
   };
 
   const handleCloseClick = () => {
-    setIsCheck(false);
     setSelectedReason("");
+    setIsCheck(false);
     onClose();
   };
 
