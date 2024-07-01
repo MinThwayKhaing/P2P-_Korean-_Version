@@ -130,7 +130,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
             onClick={handleCloseClick}
           />
           <div className={styles.customContainer}>
-            <div className="flex justify-between items-center pb-5">
+            <div className="flex justify-between items-center">
               <h1 className={styles.customHeaderText}>투자유형 변경</h1>
               <Image
                 className={styles.customCloseIcon}
@@ -145,6 +145,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
             <div
               style={{
                 borderBottom: "1px solid var(--disabled-border-color)",
+                paddingTop: "20px",
               }}
             ></div>
             <div className={styles.customGrid}>
