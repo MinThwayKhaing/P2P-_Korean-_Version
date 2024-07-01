@@ -91,7 +91,7 @@ const Documents: React.FC<DocumentsProps> = ({
               }}
             ></div>
             <div className={styles.customGrid}>
-              <div className="grid grid-cols-[160px_auto] h-96 overflow-y-auto">
+              <div className="grid grid-cols-[160px_auto] overflow-y-auto">
                 <p className={`${styles.customLeftContentText} gap-1`}>
                   서류
                   <Image
@@ -103,7 +103,7 @@ const Documents: React.FC<DocumentsProps> = ({
                     priority
                   />
                 </p>
-                <div>
+                <div style={{ height: "720px" }} className="overflow-y-auto">
                   <p className={styles.customRightContentText}>img</p>
                   <p className={styles.customRightContentText}>img</p>
                 </div>

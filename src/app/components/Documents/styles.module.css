@@ -1,6 +1,6 @@
 .customContainer {
     width: 800px;
-    height: auto;
+    min-height: 937px;
     padding-top: 24px;
     padding-bottom: 24px;
     background: #FFFFFF;
@@ -22,10 +22,11 @@
 }
 
 .customGrid {
+    width: 752px;
+    height: 720px;
+    border-radius: 10px;
     border: 1px solid var(--disabled-border-color);
     margin: 20px 24px 0 24px;
-    width: 751px;
-    height: 719px;
 }
 
 .customLeftContentText {
@@ -37,17 +38,20 @@
     color: var(--text-color);
     background-color: #EEF0F4;
     padding: 15px 16px 15px 16px;
-    border-bottom: 1px solid #FFFFFF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .customRightContentText {
-    width: 591px;
-    height: 719px;
+    width: 560px;
+    height: 645px;
     font-size: 20px;
     font-weight: 500;
     line-height: 23.87px;
     color: var(--table-sub-head-color);
-    margin: 16px 16px 8px 16px;
+    margin: 16px 16px 16px 16px;
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
