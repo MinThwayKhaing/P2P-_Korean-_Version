@@ -1,6 +1,6 @@
 .customContainer {
     width: 800px;
-    min-height: 937px;
+    height: auto;
     padding-top: 24px;
     padding-bottom: 24px;
     background: #FFFFFF;
@@ -23,7 +23,7 @@
 
 .customGrid {
     width: 752px;
-    height: 720px;
+    height: 520px;
     border-radius: 10px;
     border: 1px solid var(--disabled-border-color);
     margin: 20px 24px 0 24px;
@@ -31,7 +31,7 @@
 
 .customLeftContentText {
     width: 160px;
-    height: 719px;
+    height: 519px;
     font-size: 16px;
     font-weight: 500;
     line-height: 19.09px;
@@ -46,7 +46,7 @@
 
 .customRightContentText {
     width: 560px;
-    height: 645px;
+    height: 445px;
     font-size: 20px;
     font-weight: 500;
     line-height: 23.87px;

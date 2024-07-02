@@ -103,7 +103,7 @@ const Documents: React.FC<DocumentsProps> = ({
                     priority
                   />
                 </p>
-                <div style={{ height: "720px" }} className="overflow-y-auto">
+                <div style={{ height: "520px" }} className="overflow-y-auto">
                   <p className={styles.customRightContentText}>img</p>
                   <p className={styles.customRightContentText}>img</p>
                 </div>
