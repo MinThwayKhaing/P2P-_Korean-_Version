@@ -9,7 +9,7 @@ import changeapproval from '../../../../../assets/changeapproval.json';
 import { ColumnsType } from "antd/es/table";
 import { usePathname } from 'next/navigation'
 import ChangeInvestmentType from '@/app/components/ChangeInvestmentType/ChangeInvestmentType';
-import Header from '../../../../components/Header';
+import Header from '../../../../components/Header/Header';
 // Utility function to duplicate data
 const duplicateData = (data: any[], times: number) => {
     let duplicatedData: any[] = [];
