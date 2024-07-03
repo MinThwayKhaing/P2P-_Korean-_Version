@@ -375,8 +375,7 @@ button {
   width: 100%;
   height: 100%;
 }
-
-:where(.css-dev-only-do-not-override-f7vrd6).ant-table-wrapper .ant-table-pagination.ant-pagination{
+.ant-table-wrapper .ant-table-pagination.ant-pagination{
   background: #F1F3F5;
 
   justify-content: center !important;
@@ -438,18 +437,23 @@ button {
   text-align: center;
   color: var(--color-background);
 }
+.ant-checkbox-checked .ant-checkbox-inner
+{
+  background: #DDE0E5 !important;
+  border-color:var(--border-color) !important;
+}
+.ant-checkbox-inner:after
 
-:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-checked .ant-checkbox-inner
 {
   background: #DDE0E5 !important;
   border-color:var(--border-color) !important;
 }
-:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-indeterminate .ant-checkbox-inner:after
-{
-  background: #DDE0E5 !important;
-  border-color:var(--border-color) !important;
-}
-:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-checked .ant-checkbox-inner:after
+.ant-checkbox-checked .ant-checkbox-inner:after
 {
   display: none;
+} 
+.ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected >.ant-table-cell
+{
+  background: #F9F9FB;
+
 }
