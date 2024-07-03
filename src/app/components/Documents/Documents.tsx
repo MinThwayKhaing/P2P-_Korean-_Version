@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { useState } from "react";
 import Alert from "../Alert/Alert";
 import Confirm from "../Confirm/Confirm";
 
@@ -54,13 +54,17 @@ const Documents: React.FC<DocumentsProps> = ({
     setIsConfirmOpen(true); // Open the confirmation modal
   };
 
-  const handleAlertAction = (action: "close" | "check") => {};
+  const handleAlertAction = (action: "close" | "check") => {
+    setIsAlertOpen(false);
+  };
 
   const handleConfirmAction = (action: "close" | "check") => {
     if (action === "check") {
       setImageUrl("/success.svg");
       setModalContent("저장되었습니다.");
       setIsAlertOpen(true);
+    } else {
+      setIsConfirmOpen(false); // Close the confirmation modal
     }
   };
 
@@ -130,7 +134,8 @@ const Documents: React.FC<DocumentsProps> = ({
               >
                 <span className={styles.customPrimaryButtonText}>확인</span>
               </button>
-              <Alert
+              <Alert 
+              onConfirm ={handleCloseClick}
                 imageUrl={imageUrl}
                 modalContent={modalContent}
                 isOpen={isAlertOpen}

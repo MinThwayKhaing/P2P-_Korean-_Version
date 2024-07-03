@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -7,6 +8,7 @@ interface AlertProps {
   imageUrl: string;
   modalContent: string;
   onAction: (action: "close" | "check") => void;
+  onConfirm: (data: any) => void;
 }
 
 const Alert: React.FC<AlertProps> = ({
@@ -15,6 +17,7 @@ const Alert: React.FC<AlertProps> = ({
   imageUrl,
   modalContent,
   onAction,
+  onConfirm,
 }) => {
   const handleCloseClick = () => {
     onAction("close");
@@ -23,6 +26,8 @@ const Alert: React.FC<AlertProps> = ({
 
   const handleCheckClick = () => {
     onAction("check");
+    onConfirm({
+    });
     onClose();
   };
 

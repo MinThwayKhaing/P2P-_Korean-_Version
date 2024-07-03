@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Select } from "antd";
 import { ColumnsType } from "antd/es/table";
 import Link from "next/link";
 import RegisterReason from "./RegisterReason/RegisterReason";
+import Documents from "./Documents/Documents";
 
 interface TableComponentProps {
   tableheader: String;
@@ -30,7 +31,8 @@ const TableComponent: React.FC<TableComponentProps> = ({
   const [pageSize, setPageSize] = useState<number>(50); // Default page size to 50
   const [isRegisterReasonOpen, setIsRegisterReasonOpen] = useState(false); // State for modal
   const [selectedValue, setSelectedValue] = useState({});
-
+  const [isDocumentsOpen, setIsDocumentsOpen] = useState(false);
+  const [selectedReason, setSelectedReason] = useState("");
   const handleChange = (value: number) => {
     setSelectedValue(value);
   };
@@ -52,6 +54,17 @@ const TableComponent: React.FC<TableComponentProps> = ({
     if (selectedRows.length && selectedValue == 3) {
       setIsRegisterReasonOpen(true);
     }
+  };
+  useEffect(() => {
+    // Close the modal when selectedReason changes
+console.log(isRegisterReasonOpen)
+  }, [isRegisterReasonOpen]); 
+  
+  const handleConfirm = (data: any) => {
+    
+    setSelectedReason(data.selectedReason);
+    setIsDocumentsOpen(data.isOpen);
+    setIsRegisterReasonOpen(false)
   };
 
   return (
@@ -141,7 +154,15 @@ const TableComponent: React.FC<TableComponentProps> = ({
               rows={selectedRows}
               isOpen={isRegisterReasonOpen}
               onClose={() => setIsRegisterReasonOpen(false)}
+              onConfirm={handleConfirm} 
+
             />
+                            <Documents
+                  selectedReason={selectedReason}
+                  rows={selectedRows}
+                  isOpen={isDocumentsOpen}
+                  onClose={() => setIsDocumentsOpen(false)}
+                />
             {/* Render modal */}
           </div>
         </div>

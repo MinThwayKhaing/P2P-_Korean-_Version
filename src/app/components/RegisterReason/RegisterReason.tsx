@@ -7,11 +7,13 @@ interface RegisterReasonProps {
   isOpen: boolean;
   onClose: () => void;
   rows: any[];
+  onConfirm: (data: any) => void;
 }
 
 const RegisterReason: React.FC<RegisterReasonProps> = ({
   isOpen,
   onClose,
+  onConfirm,
   rows,
 }) => {
   const [selectedReason, setSelectedReason] = useState("");
@@ -38,12 +40,17 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
 
   const handleCheckClick = () => {
     setIsCheck(true);
+    //
   };
 
   const handleConfirmClick = () => {
-    setIsDocumentsOpen(true);
-    // setIsCheck(false);
-    // onClose();
+    onConfirm({
+      selectedReason,
+      rows,
+      isOpen: true,
+      onClose: () => setIsDocumentsOpen(false),
+    });
+    handleCloseClick();
   };
 
   return (
@@ -340,7 +347,7 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                   className={styles.customPrimaryButton}
                   onClick={handleCheckClick}
                 >
-                  <span className={styles.customPrimaryButtonText}>확인</span>
+                  <span className={styles.customPrimaryButtonText}>저장</span>
                 </button>
                 <button
                   className={styles.customSecondaryButton}
@@ -358,12 +365,7 @@ const RegisterReason: React.FC<RegisterReasonProps> = ({
                 >
                   <span className={styles.customPrimaryButtonText}>확인</span>
                 </button>
-                <Documents
-                  selectedReason={selectedReason}
-                  rows={rows}
-                  isOpen={isDocumentsOpen}
-                  onClose={() => setIsDocumentsOpen(false)}
-                />
+
               </div>
             )}
           </div>
