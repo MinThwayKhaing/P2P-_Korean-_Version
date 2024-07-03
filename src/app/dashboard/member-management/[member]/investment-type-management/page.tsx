@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Header from "@/app/components/Header";
+
 import NavComponent from "@/app/components/NavComponent";
 import TableComponent from "@/app/components/TableComponent";
 import data from '../../../../../assets/applicationdropdown.json';
@@ -9,6 +9,7 @@ import changeapproval from '../../../../../assets/changeapproval.json';
 import { ColumnsType } from "antd/es/table";
 import { usePathname } from 'next/navigation'
 import ChangeInvestmentType from '@/app/components/ChangeInvestmentType/ChangeInvestmentType';
+import Header from '@/app/components/Header';
 // Utility function to duplicate data
 const duplicateData = (data: any[], times: number) => {
     let duplicatedData: any[] = [];
