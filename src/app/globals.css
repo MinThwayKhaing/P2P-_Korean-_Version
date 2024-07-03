@@ -262,8 +262,7 @@ hr {
 button {
   gap: 10px;
   border-radius: 10px;
-  opacity: 0px;
-  background: var(--background-button-color);
+  background-color: var(--background-button-color);
   color: var(--color-background);
 }
 
@@ -377,7 +376,7 @@ button {
   height: 100%;
 }
 
-:where(.css-dev-only-do-not-override-m4timi).ant-table-wrapper .ant-table-pagination-right {
+:where(.css-dev-only-do-not-override-f7vrd6).ant-table-wrapper .ant-table-pagination.ant-pagination{
   background: #F1F3F5;
 
   justify-content: center !important;
