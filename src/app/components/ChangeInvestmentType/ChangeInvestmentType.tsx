@@ -269,6 +269,7 @@ const ChangeInvestmentType: React.FC<ChangeInvestmentTypeProps> = ({
                 isOpen={isAlertOpen}
                 onClose={() => setIsAlertOpen(false)}
                 onAction={handleAlertAction}
+                onConfirm={handleCloseClick}
               />
               <Confirm
                 imageUrl="/warning.svg"

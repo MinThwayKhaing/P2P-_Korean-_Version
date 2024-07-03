@@ -439,18 +439,17 @@ button {
   text-align: center;
   color: var(--color-background);
 }
-
-:where(.css-dev-only-do-not-override-m4timi).ant-checkbox-checked .ant-checkbox-inner
+:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-checked .ant-checkbox-inner
 {
   background: #DDE0E5 !important;
   border-color:var(--border-color) !important;
 }
-:where(.css-dev-only-do-not-override-m4timi).ant-checkbox-indeterminate .ant-checkbox-inner:after
+:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-indeterminate .ant-checkbox-inner:after
 {
   background: #DDE0E5 !important;
   border-color:var(--border-color) !important;
 }
-:where(.css-dev-only-do-not-override-m4timi).ant-checkbox-checked .ant-checkbox-inner:after
+:where(.css-dev-only-do-not-override-f7vrd6).ant-checkbox-checked .ant-checkbox-inner:after
 {
   display: none;
 }
